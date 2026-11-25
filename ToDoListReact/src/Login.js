@@ -20,11 +20,14 @@ export default function Login() {
   }
 
   return (
-    <div dir="rtl" style={{ maxWidth: 350, margin: "80px auto" }}>
-      <h2>התחברות</h2>
+    <div className="page">
+    <div className="card narrow">
+      <h1 className="title">התחברות</h1>
+      <p className="subtitle">שמחים לראות אותך שוב</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          className="field"
           placeholder="שם משתמש"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -32,6 +35,7 @@ export default function Login() {
         />
 
         <input
+          className="field"
           type="password"
           placeholder="סיסמה"
           value={password}
@@ -39,14 +43,15 @@ export default function Login() {
           required
         />
 
-        <button type="submit">התחברות</button>
+        <button type="submit" className="btn btn-primary">התחברות</button>
       </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
-      <p>
+      <p className="switch-link">
         אין לך חשבון? <a href="/register">להרשמה</a>
       </p>
+    </div>
     </div>
   );
 }

@@ -24,11 +24,14 @@ export default function Register() {
   }
 
   return (
-    <div dir="rtl" style={{ maxWidth: 350, margin: "80px auto" }}>
-      <h2>הרשמה</h2>
+    <div className="page">
+    <div className="card narrow">
+      <h1 className="title">הרשמה</h1>
+      <p className="subtitle">יצירת חשבון חדש</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
+          className="field"
           placeholder="שם משתמש"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
@@ -36,6 +39,7 @@ export default function Register() {
         />
 
         <input
+          className="field"
           type="password"
           placeholder="סיסמה - לפחות 8 תווים"
           value={password}
@@ -44,14 +48,15 @@ export default function Register() {
           required
         />
 
-        <button type="submit">הרשמה</button>
+        <button type="submit" className="btn btn-primary">הרשמה</button>
       </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
-      <p>
-        כבר רשומה? <a href="/login">להתחברות</a>
+      <p className="switch-link">
+        כבר יש לך חשבון? <a href="/login">להתחברות</a>
       </p>
+    </div>
     </div>
   );
 }
